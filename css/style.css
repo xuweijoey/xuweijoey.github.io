@@ -4,8 +4,12 @@ body {
         padding: 0;
         font-family: "Linux Libertine",Georgia,Times,serif;
         top:0; bottom: 0; left:0; right:0;
+        border:0;
 
         
+    }
+    p{margin:0; padding: 0;border: 0;
+
     }
     div {
         width: 100%;
@@ -16,19 +20,20 @@ body {
 
     #part1 {
         height:700px;
-        width: 100%;
+        width: auto;
        
         
         background-color: #fff;
         
         background-image: url('../images/broken-egg1.jpg');
+        background-repeat: no-repeat;
         background-position: center;
         /*border-radius: 50px;*/
     }
 
     #content_a{
         font-size: 60px;
-        width: 100%;
+        width: auto;
         padding-top:150px;
         padding-left:2em;
         /*border-radius: 50px;*/
@@ -36,7 +41,7 @@ body {
 
     #part2{
         height:700px;
-        width: 100%;
+        width: auto;
        
         padding: 50px;
         background-color: #fff;
@@ -47,64 +52,160 @@ body {
     #content_b{
 
         font-size: 60px;
-        width: 400px;
+        width: auto;
         padding:50% auto;
-        
-        /*border-radius: 50px;*/
+
     }
 
     #part2_box {
         background-color: #ff0000;
         opacity: .3;
-        height: 400px;
+        height: auto;
         width: 50%;
         position: absolute;
         color:#ffffff;
         padding: 50px;
 
+
     }
+    #blood{
+        position: absolute;;
+        opacity: 0;
+        width: auto;
+        background-size: cover;
+
+    }
+
     #part3{
         height:700px;
-        width: 100%;
+        width: auto;
        
         padding: 50px;
-        background-color: #fff;
+        background-color: #000;
         color:#ff0000;
-        background-image: url('../images/scream-3.jpg');
+        
         /*border-radius: 50px;*/
+        
+       
     }
+
     #content_c{
         font-size: 60px;
-        width: 100%;
+        width: auto;
         padding-top:150px;
         padding-left:2em;
+        position: absolute;;
         /*border-radius: 50px;*/
     }
+
+
+    .odd{
+     float: right;
+     opacity:0;
+     }
+    .double{
+     opacity:0;
+    
+     }
+
+
     #part4{
         height:700px;
-        width: 100%;
+        width: auto;
        
         padding: 50px;
         background-color: #fff;
-        color:#ff0000;
+        color:#ffffff;
         background-image: url('../images/Humpty-games.png');
+        background-position: center;
     }
         /*border-radius: 50px;*/
     #content_d{
         font-size: 60px;
-        width: 100%;
-        padding-top:150px;
+        width: auto;
+        padding-top:300px;
         padding-left:2em;
         /*border-radius: 50px;*/
     }
+    #part5{
+        height:700px;
+        width: auto;
+       
+        padding-top: 60px;
+        background-color: #fff;
+        color:#ffffff;
+        background-image: url('../images/last.jpg');
+        background-repeat:no-repeat;
+        background-size: cover;
 
+    }
 
-
+    #block1{
+        opacity: 0;
+    }
+     #block{
+        background-image: url("../images/puss.jpg");
+    }
+#content_e{
+        font-size: 24px;
+        width: auto;
+        padding-top:150px;
+        padding-left:2em;
+margin:0;
+    }
 
     a:link, a:visited {
         color: #38488f;
         text-decoration: none;
     }
+.float-left:{
+    float:left;
+}
+.noborder:{
+    border-width:0px;
+}
+
+#myForm{
+    margin left:10px;
+
+}
+
+#myForm{
+    margin: 20px;
+    margin-top: 0px;
+
+}
+
+#form-submit{
+    width: 100px;
+    height:30px;
+    background-color: #ff0000;
+    color:#ffffff;
+    border: 0;
+
+}
+#form-submit:hover {
+    background-color: #00ff00;
+
+}
+
+#user-name{
+    border-width: 0px;
+    border-style: none;
+    border-color: transparent;
+    background-color: #888888;
+    width:300px;
+    height:30px;
+
+}
+#answer_submit{
+    color: #ffffff;
+    font-size: 36px;
+    margin-left: 20px;
+
+}
+
+
 
 /*
     @media (max-width: 700px) {
