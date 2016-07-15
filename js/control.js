@@ -1,6 +1,8 @@
 
 $(document).ready(function() {
 
+
+     
      $("#summary").hide();
      /*$("#content").fadeOut();
 
@@ -38,7 +40,7 @@ $(function(){
 
 /*$(function(){$( window ).on("resize", function(){theightWithScrollBars = $(window).height();});*/
 
-$("#part2").mouseenter(function(){
+$("#part2_box").mouseenter(function(){
 $("#blood").css("opacity", "1");
  });
 
@@ -52,29 +54,23 @@ $( "#part3" ).mouseenter(function() {
   }, 1500 );
 });
 
-$( "#part4" ).mouseenter(function() {
-  $( "#block1" ).animate({
-    opacity:1,
-  }, 1500 );
+
+
+
+$("#part2").hover(function(){
+  $("#part2_box").animate({fontSize: "24px", opacity:1, width:"300px", marginTop:"300px"}, 2000);
+
+},
+  function(){
+    $("#part2_box").stop().animate({fontSize:"12px", opacity:0,width:"10%", marginTop:"400px"}, 500);
+  });
+
+// hover function example
+
+$("#part4").mouseover(function(e){
+    $(this).animate({opacity:0.5},400);
 });
 
-/*
-$("p").hover(function(){
-  $("p").animate({fontSize: "20px"}, 2000);
-},
-  function(){
-    $("p").stop().animate({fontSize:"12px"});
-  });
-
-
-$("p").hover(function(){
-  $("p").animate({fontSize: "20px"}, 2000);
-},
-  function(){
-    $("p").stop().animate({fontSize:"12px"});
-  });
-// hover function example
-*/
 
 
 $("#form-submit").click(function(e){

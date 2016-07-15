@@ -1,41 +1,60 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Humpty Dumpty</title>
 	<link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/control.js"></script>
+
+    
     
 </head>
 <body>
 <div id="nav">
 </div>
 
-<div id="container">
-   <div id="part1" class="boxSize">
-    <p id="content_a">Humpty Dumpty<br/> sat on a wall,</p>
-   </div>
-   <div id="blood"><img src="images/as.gif"></div>
-   <div id="part2" >xxx
-      <div id="part2_box">	<p id="content_b">Humpty Dumpty had a great fall.</p>
-      </div> 
-   </div>
 
-   <div id="part3" >
+   <section id="part1" class="boxSize">
+    <p id="content_a">Humpty <br/>Dumpty<br/> sat on a <br/><span>wall,</span></p>
+   </section>
+   <div id="blood"><img src="images/as.gif"></div>
+   <section id="part2" >
+      <div id="part2_box">	<p id="content_b">Humpty Dumpty<br/> had a great fall.</p>
+      </div> 
+   </section>
+
+   <section id="part3" >
    	<p id="content_c">All the king's horses and all the king's mens.<p>
-    <div id="troop">
+    <!--<div id="troop">
       <div class="odd"><img  src="images/t01.jpg"></div>
       <div class="odd"><img  src="images/t02.jpg"></div>
       <div class="odd"><img  src="images/t01.jpg"></div>
       <div class="odd"><img  src="images/t01.jpg"></div>
-    </div>
-  </div>
+    </div>-->
+  </section>
       
 
-   <div id="part4" >
+   <section id="part4" >
+    <div id="part4-2"></div>
    	<p id="content_d">Couldn't put Humpty together again.</p>
-   </div>
 
-   <div id="part5" >
+   </section>
+
+   <section id="part6" >
+    <p id="content_f">But if you can choose a ending of this story..</p>
+    <div id="formBt">
+    <button id="result1" class="choose">I want an amazing ending!</button>
+    <button id="result2" class="choose">I want a sad ending! </button>
+    <button id="result3" class="choose">I don't want to know the ending of it..</button>
+  </div>
+   </section>
+   <section id="part7" >
+    
+      
+   </section>
+
+<!--
+   <section id="part5" >
     <form id="myForm" >
      
         <lable>
@@ -44,8 +63,8 @@
 
         <input type="text" id="user-name" >
         <button id="form-submit">Submit</button>
-   <!--	<p id="content_e">It is better to be a ball, <br/>or never choose sit on the wall!</p>-->
-         <br> or never choose sit on the wall!     
+   
+         <br> or never choose sit on the wall!    
     
     
         
@@ -57,7 +76,7 @@
         you are right, it is better to be a <span id="name-result"></span> !
       </p>
     </div>
-  </div>  
-</div><!--container div -->
+  </section>   -->
+
 </body>
 </html>
