@@ -1,8 +1,5 @@
     $(document).ready(function() {
-    //Set each section's height equals to the window height
-    $('section').height($(window).height());
-    /*set the class 'active' to the first element 
-     this will serve as our indicator*/
+    
     $('section').first().addClass('active');
 
     /* handle the mousewheel event together with 
