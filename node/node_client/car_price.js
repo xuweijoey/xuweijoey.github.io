@@ -7,7 +7,8 @@ $(document).ready(function(){
             url: "http://localhost:3000/set_price",
             type: "GET",
             data: {
-                price: $('#car-price').val()
+                price: $('#car-price').val(),
+                color: $('#car-color').val()
             }
           });
     });

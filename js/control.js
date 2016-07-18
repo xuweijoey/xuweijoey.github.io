@@ -76,6 +76,7 @@ $("#part2").hover(function(){
 
 $("#part4").mouseover(function(e){
     $(this).fadeOut(2000);
+    $("#hiddenLi").css("display","none");
 });
 
 // from and get submitted result
@@ -137,7 +138,7 @@ $('#part3').videoBG({
     ogv:'assets/christmas_snow.ogv',
     webm:'assets/christmas_snow.webm',
     poster:'assets/christmas_snow.jpg',
-    scale:true,
+    
     zIndex:0,
     fullscreen:true,
   });

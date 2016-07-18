@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 
 var carPrice;
+var carColor;
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -15,12 +16,16 @@ app.get("/", function (req, res) {
 });
 
 app.get("/set_price", function(req, res){
-    console.log(req.query.price);
+    console.log(req.query.price);//query= get request from ajax file
     carPrice = req.query.price;
+    
+    carColor = req.query.color;
+    
 });
 
 app.get("/retrieve_price", function(req, res){
-    res.send("The car price is: " + carPrice);
+    res.send("The car price is: " + carPrice + carColor);
+    
 });
 
 app.listen(3000, function () {
