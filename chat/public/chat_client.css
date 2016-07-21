@@ -1,0 +1,145 @@
+body
+{
+	font: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #e597a6;
+}
+#chat-name{
+	border: 1px solid #ea647d;
+	background-color: #fff3f5;
+	padding: 10px;
+	width: 30%;
+	margin-right: .5%;
+	height: 32px;
+
+}
+#chat_start{
+	width: 12%;
+	background-color: #ff476a;
+	border: none;
+	padding: 10px;
+	font-size: 10px;
+	color: #ffffff;
+}
+
+#chat-log
+{
+	background-color: #FFF;
+	margin: 5px;
+	
+	position: fixed;
+	top: 40px;
+	bottom: 90px;
+	width: 100%;
+	overflow-y: scroll;
+	border: 1px solid #ea647d;
+}
+
+#chat-log ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#chat-log ul li
+{
+	padding: 5px 10px;
+}
+#chat-log ul li.you
+{
+	color:#554d4f;
+	background-color: #eccdd2;
+}
+#chat-log ul li.history1
+{
+	color:#c3ecf3;
+	background-color: #dcdcdc;
+}
+#chat-log ul li.history2
+{
+	color:#a85a5a;
+	background-color: #ffffff;
+}
+
+
+form
+{
+	background-color: #FFF;
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	padding: 5px;
+	
+}
+form#chat-form{
+	border-radius: 12px;
+
+}
+
+form #chat-input
+{
+	border: 1px solid #ea647d;
+	background-color: #fff3f5;
+	padding: 10px;
+	width: 80%;
+	margin-right: .5%;
+	height: 32px;
+}
+
+form button
+{
+	width: 9%;
+	background-color: #ff476a;
+	border: none;
+	padding: 10px;
+	font-size: 10px;
+	color: #ffffff;
+}
+
+fieldset{
+	border:none;
+	background-color:#fff;
+}
+
+    #emoji-box{
+		background-color: #ffd2d2;
+		height: 50px;
+		display: none;
+		
+		position: fixed;
+		bottom: 50px;
+	}
+	#emoji-box input{
+      cursor: pointer;
+      display: inline-block;
+      margin: 5px;
+	}
+	#close-emoji{
+    position: absolute;
+    right:10px;
+    top:10px;
+	}
+	#emoji{
+		border: 0px;
+		
+		width: 6%;
+		background-color: #333333;
+		color: #fff;
+		font-size: 10px;
+		
+		
+		padding-top: 10px ;
+		padding-left: 3%;
+		padding-right: 0px;
+		padding-bottom: 11px;
+
+		float: right;
+
+
+	}
+	#emoji:hover{
+		background-color: #666666;
+		cursor: pointer;
+	}

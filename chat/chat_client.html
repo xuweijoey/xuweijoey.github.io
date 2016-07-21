@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>here is my chat app</title>
-	<link type="text/css" rel="stylesheet" href="chat_client.css">
+	<link type="text/css" rel="stylesheet" href="public/chat_client.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-	<script type="text/javascript" src="chat_client.js"></script>
+	<script type="text/javascript" src="public/chat_client.js"></script>
 </head>
 <body>
 	<div id="chat-meta">
@@ -16,12 +16,25 @@
 		<ul>
 		</ul>
 	</div>
+    <div id="emojiHere">
+	<form id="emoji-box">
+		<!--
+		<input id="n01"value="n01" type="image" name="submit_n01" src="https://media.giphy.com/media/10a8AOSeP6Rqfu/giphy.gif" width="40" height="40">
+		<input id="n02"value="n02" type="image" name="submit_n01" src="https://media.giphy.com/media/KJehuE9uqNzAA/giphy.gif" width="40" height="40">
+		<input id="n03"value="n03" type="image" name="submit_n01" src="https://media.giphy.com/media/a0Zu0ZwKyoUVO/giphy.gif" width="40" height="40">//this is first way
+        <img id ="close-emoji" src="http://icons.iconarchive.com/icons/custom-icon-design/mini/48/Close-icon.png" width="30" height="30">-->
+
+
+	</form>
+    </div>
 	<form id="chat-form">
 	<fieldset>
 		<input type="text" id="chat-input">
 		<button >send</button>
-	</fieldset>
-    </form>
-
+  </fieldset>
+   </form>
+   <form id="emojiShow">
+   <button id="emoji">emoji</button>
+  </form>
 </body>
 </html>
