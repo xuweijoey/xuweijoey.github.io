@@ -1,5 +1,17 @@
 $(document).ready(function(){
 	var socket= io("http://localhost:3000");
+//load emoji
+$.ajax({
+  url:"http://localhost:3000/emoji",
+  success: function(data){
+  for(var i=0; i<14; i++){
+  $("#emoji-box").append("<input type='image' value='n0"+i+"' src=http://i.giphy.com/"+ data[i] + " width='40' height='40' id='n0"+i+"'>");
+  //console.log(KTurl[i]);
+}
+      }//function
+  });//ajax
+
+
 $("#chat_start").click(function(){
 	console.log($("#chat-name").val());
 //check name first
@@ -24,7 +36,7 @@ $("#chat_start").click(function(){
     }//else
     }//for
         if (data.length>1) 
-    	{$("#chat-log").append("<div style='color:#999999'>this is history</div>");}
+    	{$("#chat-log ul").append("<li id='historyLog'>***this is a history***</li>");}
 
 	}//function
 });//ajax
@@ -35,6 +47,12 @@ $("#chat_start").click(function(){
 
 
 $("#chat-form").submit(function(){
+  if($("#chat-name").val() == "")
+    {
+        alert("have a name first");
+        return false;
+    }
+    else{
 	//check name first_doesn't work
 	// if($("#chat-name").attr("value") == null)
  //    {
@@ -46,12 +64,15 @@ $("#chat-form").submit(function(){
     messageObject.text = $("#chat-input").val();
 	socket.emit("chat message", messageObject);//refrencing io commend to the server, emit: send message
 	$("#chat-input").val("");
+}
     return false;// on flash
 
 });//end of chat-form
 
 
-//    var valuePic;//**********when I have pics  form emoji-box
+
+//**********when I have pics  form emoji-box
+//  var valuePic;
 // $("#emoji-box input").click(function(){
 //     console.log($(this).val());
 //     valuePic =$(this).val();
@@ -81,27 +102,98 @@ $("#chat-form").submit(function(){
 //  });// click function
 //**********when I have pics  form emoji-box
 
-$("#emojiShow").submit(function(e){
-   socket.emit("emojiShow", "Hello Kitty");
-  });//end of form
+$("#emoji").click(function(){
+          $("form#emoji-box").css("display","block");
+          
+       });// click function
+$("#close-emoji").click(function(){
+          $("form#emoji-box").css("display","none");
 
-socket.on("emojiShow", function(KTurl){
-  for(var i; i<KTurl.length; i++ ){
-  $("#emoji-box").append("<span><img src="+ KTurl[i] + " width='40' height='40'></span>");
-  console.log(KTurl);}
-    
+ });// click function
+
+
+
+ var valuePic=0;
+
+$("#emoji-box").submit(function(){
+  $("#emoji-box input").unbind().click(function(e){
+  valuePic= $(this).attr("src");
+  console.log("gif link is "+valuePic);
+   socket.emit("emojiLog", valuePic);       
+   });    
+  
+  return false;
+  });
+
+     
+  
+ 
+
+
+
+
+socket.on("emojiLog", function(valuePic){
+  console.log("this is a "+valuePic);
+  $("#chat-log").scrollTop($("#chat-log ul").height());
+  
+$("#chat-log ul").append("<li class='me'><img src="+  valuePic + " width='40' height='40'></li>");
 });// end of socket on message
+
+    
 
 
 socket.on("chat message", function(msg){
+  $("#chat-log").scrollTop($("#chat-log ul").height());
 	if(msg.username==$("#chat-name").val()){
 		$("#chat-log ul").append("<li class='me'><b>"+ msg.username + ":</b>"+ msg.text + "</li>");
     }else{
     	$("#chat-log ul").append("<li class='you'><b>"+ msg.username + ":</b>"+ msg.text + "</li>");
     }
+
+    $(".playTrack").click(function(){
+      $("#musicNo").remove();
+  console.log("clicked playtrack");
+  $("#music").css({right: "0px", opacity:1});
+  
+   });
+
+
 });// end of socket on message
+
+//music iframe animation
+$("#music").hover(function(){
+  $("#music").animate({right: "0px", opacity:1}, 800);
+
+  },
+  function(){
+    $("#music").stop().animate({right: "-28%", opacity:0.4}, 800);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 });//end of ready
+
+

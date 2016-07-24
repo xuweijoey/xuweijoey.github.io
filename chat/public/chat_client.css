@@ -3,6 +3,13 @@ body
 	font: 13px;
 	font-family: Helvetica, Arial, sans-serif;
 	background-color: #e597a6;
+	border: 0px;
+}
+#chat-log{
+	position: absolute;
+	top: 40px;
+	bottom: 50px ;
+	overflow-y:scroll; 
 }
 #chat-name{
 	border: 1px solid #ea647d;
@@ -23,16 +30,26 @@ body
 }
 
 #chat-log
-{
-	background-color: #FFF;
+{   background-color: #fff;
+	background-image: url("https://upload.wikimedia.org/wikipedia/bar/thumb/2/27/Hello_Kitty_logo.svg/2000px-Hello_Kitty_logo.svg.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+
 	margin: 5px;
 	
-	position: fixed;
+	position: absolute;
 	top: 40px;
 	bottom: 90px;
 	width: 100%;
 	overflow-y: scroll;
 	border: 1px solid #ea647d;
+}
+
+#historyLog{
+	background-color:#ffd2dd; 
+	font-size:10px;
+	color:#77224c;
 }
 
 #chat-log ul
@@ -45,25 +62,33 @@ body
 #chat-log ul li
 {
 	padding: 5px 10px;
+	font: 10px;
+	line-height: 18px;
+	opacity: 0.8;
+	border-bottom: 1px solid #dddddd;
 }
+#chat-log ul li.me
+{
+	color:#333333;
+	background-color: #fffcfd;}
 #chat-log ul li.you
 {
-	color:#554d4f;
-	background-color: #eccdd2;
+	color:#222222;
+	background-color: #ffeef1;
 }
 #chat-log ul li.history1
 {
-	color:#c3ecf3;
+	color:#a85a5a;
 	background-color: #dcdcdc;
 }
 #chat-log ul li.history2
 {
-	color:#a85a5a;
-	background-color: #ffffff;
+	color:#c28383;
+	background-color: #aaaaaa;
 }
 
 
-form
+form#chat-form
 {
 	background-color: #FFF;
 	position: fixed;
@@ -77,6 +102,16 @@ form#chat-form{
 	border-radius: 12px;
 
 }
+form#emojiShow
+{
+	background-color: #FFF;
+	position: fixed;
+	bottom: 17px;
+	
+	right: 2.5%;
+	padding: 4px;
+	
+}
 
 form #chat-input
 {
@@ -88,7 +123,9 @@ form #chat-input
 	height: 32px;
 }
 
-form button
+
+
+ button
 {
 	width: 9%;
 	background-color: #ff476a;
@@ -98,18 +135,25 @@ form button
 	color: #ffffff;
 }
 
+#chat-form button:hover{
+	background-color: #ff8d90;
+}
+
 fieldset{
 	border:none;
 	background-color:#fff;
+	padding: 12px;
 }
 
-    #emoji-box{
+    form#emoji-box{
 		background-color: #ffd2d2;
 		height: 50px;
+	    position: fixed;
+		bottom: 64px;
+		right:5px;
+		left:5px;
+		padding: 5px;
 		display: none;
-		
-		position: fixed;
-		bottom: 50px;
 	}
 	#emoji-box input{
       cursor: pointer;
@@ -136,10 +180,65 @@ fieldset{
 		padding-bottom: 11px;
 
 		float: right;
-
-
-	}
+}
 	#emoji:hover{
 		background-color: #666666;
 		cursor: pointer;
 	}
+	#emojiShow{
+		width: 8%;
+		
+		position:fixed;
+		
+		bottom: 38px;
+	    right: 3%;
+		
+	}
+	#emojiShow button{
+		width: 100%;
+
+	}
+.hide{
+	display: none;
+}
+
+
+	
+
+	#music{
+		position: fixed;
+		top: 0;
+		opacity: 0.4;
+		z-index: 1;
+		border: 0;
+		height:80%;
+		width: 30%;
+		right: -28%;
+		background-color: #ff889f;
+
+	}
+	#musicNo{
+		color:#ffffff;
+		position: absolute;
+		top: 36%;
+		left:10%;
+		font-size:12px;
+
+	}
+
+ #musicWindow
+{
+		border: 0px;
+		border-style: none;
+		height:100%;
+		width: 100%;
+	}
+
+
+
+
+
+	.playTrack{}
+
+
+

@@ -42,7 +42,7 @@ io.on('connection',function(socket){
         var randomTrack = body.tracks.items[randomTrackNumber];
      
 
-        msg.text = msg.text + " <a href='" + randomTrack.external_urls.spotify + "'>"+ randomTrack.name +"</a> by " + randomTrack.artists[0].name;
+        msg.text = msg.text + " <a  target='left' class='playTrack' href='" + randomTrack.external_urls.spotify + "'>"+ "<img style='display: inline-block; 'src='http://www.wowpads.com/images/playbutton.png' width='12' height='12'></a><span class='hide'>" + randomTrack.name  + randomTrack.artists[0].name+ "</span>";
         io.emit("chat message", msg);
         chatArchive.push(msg);
       }
@@ -58,20 +58,36 @@ io.on('connection',function(socket){
 
  
 
+app.get("/emoji", function(req, res) {
 
-  socket.on("emojiShow", function(iim){
-    var KTurl;
-    console.log(iim);
-     request("http://api.giphy.com/v1/stickers/search?q="+iim+"&limit=5&api_key=dc6zaTOxFJmzC", function(err, resp, body) {
+    var KTurl=[];
+    
+   var iim="hello kitty";
+     request("http://api.giphy.com/v1/stickers/search?q="+iim+"&limit=14&api_key=dc6zaTOxFJmzC", function(err, resp, body) {
        body = JSON.parse(body);//*************very important to see the json object files
-      console.log(body.data[0].id);
-      KTurl=body.data[0].id+".gif";
-    //   KTurl=[data[0].url, data[1].url,data[2].url,data[3].url,data[4].url];
-    //   console.log(KTurl);
+      for(var i=0; i<14; i++){
+       KTurl[i]= body.data[i].id+".gif";
+      }
+      console.log(KTurl);
+      res.send(KTurl);
+      // console.log(KTurl);
+      //KTurl=[body.data[0].url, body.data[1].url,body.data[2].url,body.data[3].url,body.data[4].url];
+      //console.log(KTurl);
+      
+
  });//end of request
     //chatArchive.push(msg);//push all message to the array
-  io.emit("emojiShow", KTurl);
+     //console.log("kyurl is " + KTurl);
+ });//end of get
+
+
+socket.on("emojiLog", function(valuePic){
+  console.log("this is a" + valuePic);
+  io.emit("emojiLog", valuePic);
   });//socket on
+
+
+
 
 });// check, when client try to connect the app give a massage //end of io on
 
@@ -91,3 +107,9 @@ app.get('/get_archive', function(req, res) {
 http.listen(3000, function () {
   console.log('Example app listening on port 3000!');//USE CONSOLE DEBUGGING
 });
+
+
+
+
+
+

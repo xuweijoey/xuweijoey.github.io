@@ -1,13 +1,25 @@
 
+
 <html>
 <head>
 	<title>here is my chat app</title>
 	<link type="text/css" rel="stylesheet" href="public/chat_client.css">
+	<link rel="icon" href="public/favicon-16x16.png" type="image/x-icon" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 	<script type="text/javascript" src="public/chat_client.js"></script>
 </head>
 <body>
+	<div id = "music">
+		<div id="musicNo">
+			<img src="http://www.cartoon-clipart.co/images/hello-kitty.png" width="50" height="58">
+			<p>Sorry,You have no music now.<br>Please click the play button after your messages,<br>
+			and enjoy the song.</p></div>
+	<iframe id = "musicWindow"src="about:blank" name="left"  >
+	
+	</iframe> 
+   </div>
+	<!-- <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf&view=coverart" width="250" height="330" frameborder="0" allowtransparency="true"></iframe> //spotify widge-->
 	<div id="chat-meta">
 		<input type="text" id="chat-name">
 		<button id="chat_start">start</button>
@@ -21,8 +33,8 @@
 		<!--
 		<input id="n01"value="n01" type="image" name="submit_n01" src="https://media.giphy.com/media/10a8AOSeP6Rqfu/giphy.gif" width="40" height="40">
 		<input id="n02"value="n02" type="image" name="submit_n01" src="https://media.giphy.com/media/KJehuE9uqNzAA/giphy.gif" width="40" height="40">
-		<input id="n03"value="n03" type="image" name="submit_n01" src="https://media.giphy.com/media/a0Zu0ZwKyoUVO/giphy.gif" width="40" height="40">//this is first way
-        <img id ="close-emoji" src="http://icons.iconarchive.com/icons/custom-icon-design/mini/48/Close-icon.png" width="30" height="30">-->
+		<input id="n03"value="n03" type="image" name="submit_n01" src="https://media.giphy.com/media/a0Zu0ZwKyoUVO/giphy.gif" width="40" height="40">//this is first way-->
+        <img id ="close-emoji" src="http://icons.iconarchive.com/icons/custom-icon-design/mini/48/Close-icon.png" width="30" height="30">
 
 
 	</form>
@@ -33,8 +45,8 @@
 		<button >send</button>
   </fieldset>
    </form>
-   <form id="emojiShow">
+   <div id="emojiShow"> 
    <button id="emoji">emoji</button>
-  </form>
+  <!-- </form> -->
 </body>
 </html>
